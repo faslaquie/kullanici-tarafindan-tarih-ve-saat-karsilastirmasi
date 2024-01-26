@@ -1,0 +1,18 @@
+var
+TARIH_SAAT, SECILEN_TARIH_SAAT : TDateTime;
+SONUC : Boolean;
+begin
+Memo1.Lines.Clear;
+TARIH_SAAT := StrToDateTime('27.02.2021 12:30:00');
+Memo1.Lines.Add('TARIH_SAAT : ' +DateTimeToStr(TARIH_SAAT));
+Memo1.Lines.Add('TARIH_SAAT ile seçilen tarih eşit mi : ' + BoolToStr(SameDate(TARIH_SAAT,DateTimePicker1.Date)));
+SECILEN_TARIH_SAAT := DateTimePicker1.Date + DateTimePicker2.Time;
+
+Memo1.Lines.Add('TARIH_SAAT ile seçilen tarih ver saat eşit mi : '+ BoolToStr(SameDate(TARIH_SAAT,SECILEN_TARIH_SAAT)));
+Memo1.Lines.Add('TARIH_SAAT ile seçilen saat eşit mi : '+ BoolToStr(SameDate(TARIH_SAAT,DateTimePicker2.Time)));
+
+Memo1.Lines.Add('-----------------------------------');
+Memo1.Lines.Add('0 False(Yanlış), -1 True(Doğru) anlamındadır.');
+end;
+
+end.
